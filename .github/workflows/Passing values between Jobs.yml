@@ -14,9 +14,13 @@ jobs:
 
     steps:
       - id: step1
-        run: echo "test={ImportantValue1}" >> $GITHUB_OUTPUT
+        run: |
+          echo "test={ImportantValue1}" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
       - id: step2
-        run: echo "test={ImportantValue2}" >> $GITHUB_OUTPUT
+        run: |
+          echo "test={ImportantValue2}" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
   
   
   job2:
