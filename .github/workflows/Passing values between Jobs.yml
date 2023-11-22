@@ -21,7 +21,7 @@ jobs:
           echo "output1={ImportantValue1}" >> $GITHUB_OUTPUT
       - id: step2
         run: |
-          echo "test={ImportantValue2}" >> $GITHUB_OUTPUT
+          echo "output2={ImportantValue2}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: ubuntu-latest
