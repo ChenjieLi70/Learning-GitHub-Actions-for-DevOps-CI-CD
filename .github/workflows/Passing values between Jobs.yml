@@ -12,16 +12,16 @@ jobs:
 
     # Map a step output to a job output
     outputs:
-      output1: ${{ steps.step1.outputs.output1 }}
-      output2: ${{ steps.step2.outputs.output2 }}
+      output1: ${{ steps.step1.outputs.test }}
+      output2: ${{ steps.step2.outputs.test }}
 
     steps:
       - id: step1
         run: |
-          echo "output1={ImportantValue1}" >> $GITHUB_OUTPUT
+          echo "test={ImportantValue1}" >> $GITHUB_OUTPUT
       - id: step2
         run: |
-          echo "output2={ImportantValue2}" >> $GITHUB_OUTPUT
+          echo "test={ImportantValue2}" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: ubuntu-latest
@@ -29,5 +29,5 @@ jobs:
     steps:
       - run: |
           echo "Printing the values"
-          echo output1: ${{ needs.job1.outputs['output1'] }}
-          echo output2: ${{ needs.job1.outputs['output2'] }}
+          echo output1: ${{ needs.job1.outputs.output1 }}
+          echo output2: ${{ needs.job1.outputs.output2 }}
